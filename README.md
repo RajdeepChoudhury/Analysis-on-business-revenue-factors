@@ -1,16 +1,16 @@
-# 📊 Analysis and Clustering of Business Revenue Factors
+# Analysis and Clustering of Business Revenue Factors
 
-## 📌 Overview
+## Overview
 This project focuses on analyzing key business factors that influence revenue and applying clustering techniques to identify patterns and group similar business profiles. It helps in understanding customer behavior and optimizing revenue strategies.
 
 ---
 
-## 🎯 Objective
+## Objective
 To analyze business data and use clustering algorithms to group entities based on revenue-related factors, enabling better decision-making and targeted business strategies.
 
 ---
 
-## 🚀 Features
+## Features
 - Data preprocessing and cleaning  
 - Exploratory Data Analysis (EDA)  
 - Feature selection and scaling  
@@ -20,7 +20,7 @@ To analyze business data and use clustering algorithms to group entities based o
 
 ---
 
-## 🤖 Clustering Model
+## Clustering Model
 
 ### Algorithm Used:
 - K-Means Clustering  
@@ -37,13 +37,13 @@ The optimal number of clusters is determined using the Elbow Method, and the mod
 
 ---
 
-## 📊 Visualization
+## Visualization
 - Elbow curve to determine optimal clusters  
 - Scatter plots to visualize grouped data  
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - Python  
 - Pandas  
 - NumPy  
