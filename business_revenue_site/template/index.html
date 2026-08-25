@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Revenue Factor Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <main class="container">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Groq-powered business analytics</p>
+                <h1>Business Revenue Factor Analyzer</h1>
+                <p class="subtext">
+                    Enter the location and operating factors to calculate a revenue-factor score.
+                    The app uses Python for scoring and Groq API for AI insights.
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <form method="POST" class="form-grid">
+                <div class="field">
+                    <label>Visibility (0-10)</label>
+                    <input type="number" name="visibility" min="0" max="10" step="1" value="{{ form_values.visibility }}">
+                </div>
+
+                <div class="field">
+                    <label>Accessibility (0-10)</label>
+                    <input type="number" name="accessibility" min="0" max="10" step="1" value="{{ form_values.accessibility }}">
+                </div>
+
+                <div class="field">
+                    <label>Parking availability (0-10)</label>
+                    <input type="number" name="parking" min="0" max="10" step="1" value="{{ form_values.parking }}">
+                </div>
+
+                <div class="field">
+                    <label>Footfall / customer traffic (0-10)</label>
+                    <input type="number" name="footfall" min="0" max="10" step="1" value="{{ form_values.footfall }}">
+                </div>
+
+                <div class="field">
+                    <label>Digital presence (0-10)</label>
+                    <input type="number" name="digital_presence" min="0" max="10" step="1" value="{{ form_values.digital_presence }}">
+                </div>
+
+                <div class="field">
+                    <label>Years of operation (0-10)</label>
+                    <input type="number" name="years_of_operation" min="0" max="10" step="1" value="{{ form_values.years_of_operation }}">
+                </div>
+
+                <div class="field">
+                    <label>Competition pressure (0-10)</label>
+                    <input type="number" name="competition" min="0" max="10" step="1" value="{{ form_values.competition }}">
+                </div>
+
+                <div class="field">
+                    <label>Construction disruption (0-10)</label>
+                    <input type="number" name="construction_disruption" min="0" max="10" step="1" value="{{ form_values.construction_disruption }}">
+                </div>
+
+                <div class="field">
+                    <label>Traffic congestion (0-10)</label>
+                    <input type="number" name="traffic_congestion" min="0" max="10" step="1" value="{{ form_values.traffic_congestion }}">
+                </div>
+
+                <div class="field">
+                    <label>Rent pressure (0-10)</label>
+                    <input type="number" name="rent_pressure" min="0" max="10" step="1" value="{{ form_values.rent_pressure }}">
+                </div>
+
+                <div class="full">
+                    <button type="submit">Calculate Revenue Factor</button>
+                </div>
+            </form>
+        </section>
+
+        {% if result %}
+        <section class="results">
+            <div class="card score-card">
+                <h2>Result</h2>
+                <div class="score">{{ result.score }}</div>
+                <p class="label">{{ result.label }}</p>
+            </div>
+
+            <div class="card">
+                <h2>Groq AI Insight</h2>
+                <div class="summary">
+                    {{ ai_summary }}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+</body>
+</html>
