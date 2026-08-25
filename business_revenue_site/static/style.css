@@ -1,0 +1,153 @@
+:root {
+    --bg: #0f172a;
+    --panel: #111827;
+    --card: #1f2937;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #38bdf8;
+    --border: rgba(255,255,255,0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a 55%, #111827);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.container {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    padding: 40px 0 60px;
+}
+
+.hero {
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 0 0 12px;
+}
+
+.subtext {
+    color: var(--muted);
+    max-width: 720px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.card {
+    background: rgba(17, 24, 39, 0.88);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.28);
+    margin-top: 18px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    font-size: 0.92rem;
+    color: #d1d5db;
+}
+
+input {
+    width: 100%;
+    padding: 14px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: #0b1220;
+    color: var(--text);
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+button {
+    width: 100%;
+    padding: 15px 18px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #38bdf8, #60a5fa);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.95;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.score-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 220px;
+}
+
+.score {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin: 10px 0;
+}
+
+.label {
+    color: var(--muted);
+    margin: 0;
+}
+
+.summary {
+    line-height: 1.75;
+    color: #e5e7eb;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 800px) {
+    .form-grid,
+    .results {
+        grid-template-columns: 1fr;
+    }
+}
